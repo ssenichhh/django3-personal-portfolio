@@ -1,0 +1,92 @@
+{% extends "portfolio/basenew.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Main -->
+  <div id="main">
+
+    <!-- One -->
+      <section id="one">
+        <header class="major">
+          <h2>About me<br /></h2>
+
+        </header>
+        <p>I develop web applications using Python and the Django framework to create reliable and scalable web services and sites.
+
+    I've been actively learning Django over the past few months, working on small projects and learning development best practices.
+    My experience includes working with Django models, forms, views, and templates to create user-friendly interfaces.</p>
+    <ul class="actions" style="display: inline-block; margin-right: 10px;">
+      <li><a href="{% static 'portfolio/Resume - Arseniy AshchymovEN.pdf' %}" class="button" target="_blank">Resume</a></li>
+    </ul>
+    <ul class="actions" style="display: inline-block;">
+      <li><a href="{% url 'blog:all_blogs' %}" class="button">Blog</a></li>
+    </ul>
+
+      </section>
+
+    <!-- Two -->
+      <section id="two">
+        <h2>Completed courses</h2>
+        <div class="row">
+          {% for project in projects %}
+          <div class="col-lg-4 col-md-6">
+
+            {% if project.url %}
+            <a href="{{ project.url }}">
+              <img src="{{ project.image.url }}" class="img-fluid mb-2" width="700" height="400">
+            </a>
+            {% else %}
+
+            <img src="{{ project.image.url }}" class="img-fluid mb-2">
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+
+          </div>
+          {% endfor %}
+        </div>
+
+      </section>
+
+    <!-- Three -->
+      <section id="three">
+        <h2>Get In Touch</h2>
+        <p>I'm waiting for an internship or trainee position to further develop my skills, gain practical experience,
+           and contribute to a dynamic team. I'm eager to learn, adapt, and grow in a real-world environment, 
+          making a meaningful impact while also benefiting from mentorship and hands-on training. </p>
+        <div class="row">
+          <div class="col-8 col-12-small">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="">
+                    <li style="list-style-type: none;"><input type="submit" class="button" value="Send Message" /></li>
+                </div>
+            </form>
+          </div>
+          <div class="col-4 col-12-small">
+            <ul class="labeled-icons">
+              <li>
+                <i class="fa fa-home" style="font-size:26px"></i><span class="label"> Address: </span>
+                <br>Kyiv, Ukraine<br>
+              </li>
+              <li>
+                <i class="fa fa-phone" style="font-size:26px"></i><span class="label"> Phone: </span>
+                <br>+380977879919<br>
+              </li>
+              <li>
+                <i class="fa fa-envelope" style="font-size:26px"></i><span class="label"> Email: </span>
+                <br>arseniyashchymov@gmail.com<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+  </div>
+
+{% endblock %}

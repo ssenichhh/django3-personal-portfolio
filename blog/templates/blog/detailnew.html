@@ -1,0 +1,21 @@
+{% extends "portfolio/basenew.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Main -->
+  <div id="main">
+
+    <!-- One -->
+      <section id="one">
+        <header class="major">
+          <h2>{{ blog.title }}<br /></h2>
+          <h5 class="text-center text-muted mb-5">{{ blog.date|date:'F jS Y' }}</h5>
+
+          {{ blog.description|safe }}
+
+        </header>
+      </section>
+
+{% endblock %}

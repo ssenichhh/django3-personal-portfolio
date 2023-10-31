@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Arsenii Ashchymov</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'portfolio/css/main.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a  class="image avatar"><img src="{% static 'portfolio/images/PhotoHome1.jpeg' %}"/></a>
+					<h1><strong><a href="{% url 'home' %}">I am Arsenii</a></strong>, a Junior Django Developer. <br /></h1>
+
+				</div>
+        <footer id="footer">
+          <div class="inner">
+            <ul class="icons">
+              <li>
+                <a href="https://t.me/senichhh"><i class="fa fa-telegram" style="font-size:26px"></i></a>
+              </li>
+
+              <li><a href="https://github.com/ssenichhh"><i class="fa fa-github" style="font-size:26px"></i></a>
+              <li><a href="mailto: arseniyashchymov@gmail.com"><i class="fa fa-envelope" style="font-size:26px"></i></a>
+            </ul>
+            <ul class="copyright">
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+			</header>
+
+
+
+		<!-- Footer -->
+
+
+      {% block content %}
+      {% endblock %}
+		<!-- Scripts -->
+			<script src="{% static 'portfolio/Js/jquery.min.js' %}"> </script>
+			<script src="{% static 'portfolio/Js/jquery.poptrox.min.js' %}"> </script>
+			<script src="{% static 'portfolio/Js/browser.min.js' %}"> </script>
+			<script src="{% static 'portfolio/Js/breakpoints.min.js' %}"> </script>
+			<script src="{% static 'portfolio/Js/util.js' %}"> </script>
+			<script src="{% static 'portfolio/Js/main.js' %}"> </script>
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	</body>
+</html>
